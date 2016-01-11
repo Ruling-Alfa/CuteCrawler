@@ -10,16 +10,18 @@ public class SpiderTest
     /**
      * This is our test. It creates a spider (which creates spider legs) and crawls the web.
      * 
+     * @param args
+     *            - not used
      */
     public static void main(String[] args)
     {
+    	if(args.length!=1){
+    		System.out.println("Enter filename as argument(only 1) to read url list");
+    		return;
+    	}
     	FileReader fileReader=null;
     	BufferedReader bufferedReader = null;
     	try{
-	    	if(args.length!=0){
-	    		System.out.println("Enter filename as argument(only 1) to read url list");
-	    		return;
-	    	}
 	    	File file = new File(args[0]);
 	    	fileReader= new FileReader(file);
 			bufferedReader = new BufferedReader(fileReader);
