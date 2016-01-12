@@ -15,6 +15,7 @@ public class Spider
 	private Set<String> pagesVisited = new HashSet<String>();
 	private List<String> pagesToVisit = new LinkedList<String>();  
 	private int count=0;
+	private static String logFile="/home/alfa/Crawled/links.log";
 
 	public List<String> getPagesToVisit() {
 		return pagesToVisit;
@@ -63,7 +64,7 @@ public class Spider
 
 	  static void logLink(String HTML_Link,String path) {
 		  try{
-			  File file = new File("/home/alfa/Crawled/links.log");
+			  File file = new File(logFile);
 				 
 				// if file doesnt exists, then create it
 				if (!file.exists()) {
