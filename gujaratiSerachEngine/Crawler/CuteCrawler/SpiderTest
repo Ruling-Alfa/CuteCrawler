@@ -29,6 +29,7 @@ public class SpiderTest
 			String line ;
 			
 			Spider spider = new Spider();
+			Spider.initLogFile();
 		    
 			while ((line = bufferedReader.readLine()) != null) {
 			    spider.addUrl(line);	
