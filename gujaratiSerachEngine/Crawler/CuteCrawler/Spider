@@ -19,6 +19,20 @@ public class Spider
 	public List<String> getPagesToVisit() {
 		return pagesToVisit;
 	}
+	static void initLogFile(){
+		try{
+		 File file = new File(logFile);
+		 
+			// if file doesnt exists, then create it
+			if (file.exists()) {
+				file.delete();
+			}
+			file.createNewFile();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 	  /**
 	   * Our main launching point for the Spider's functionality. Internally it creates spider legs
 	   * that make an HTTP request and parse the response (the web page).
@@ -56,9 +70,9 @@ public class Spider
 					file.createNewFile();
 				}
 				 
-				FileWriter fw = new FileWriter(file.getAbsoluteFile());
+				FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
 				BufferedWriter bw = new BufferedWriter(fw);
-				bw.write(HTML_Link+">"+path+".html");
+				bw.write(HTML_Link+">"+path+".html\n");
 				bw.close();
 		  }catch(Exception x){
 			  System.out.println(x);
