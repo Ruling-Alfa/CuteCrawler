@@ -98,7 +98,7 @@ public class Spider
 	          //leg.crawl(currentUrl); // Lots of stuff happening here. Look at the crawl method in
 	          //System.out.println(leg.crawl(currentUrl));// SpiderLeg
 	          String data = null;
-	          if(currentUrl!=null)
+	          if(currentUrl!=null  && !currentUrl.isEmpty())
 	        	  data=leg.crawl(currentUrl);
 	          if(data!=null){
 	        	  logLink(currentUrl,count+"");
